@@ -1,15 +1,25 @@
-<!-- The header ejs template is included to ensure our CSS and fonts are loaded -->
-<%- include('partials/header') %>
-
-    <!-- Display question or whatever else here -->
-    <h1>Math Quiz</h1>
-    <p>Answer the question below:</p>
-
-    <form action="/quiz" method="POST">
-        <!-- This handles sending the user's answer back to the server. It's not recommended you modify this, as you shouldn't need to -->
-        <label for="answer">Your Answer:</label>
-        <input type="text" id="answer" name="answer" required>
-        <button type="submit">Submit</button>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
+  <body>
+    <h1>Question</h1>
+    <p>
+      What is <%= question.num1 %> <%= question.operation %> <%= question.num2
+      %>?
+    </p>
+    <form action="/quiz/submit" method="POST">
+      <input type="text" name="answer" required />
+      <button type="submit">Submit</button>
     </form>
-</body>
+    <form action="/quiz/submit" method="POST">
+      <input type="hidden" name="endQuiz" value="true" />
+      <button type="submit">End Quiz</button>
+    </form>
+    <p>Current Streak: <%= streak %></p>
+  </body>
 </html>

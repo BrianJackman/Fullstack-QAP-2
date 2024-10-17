@@ -3,15 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home</title>
+    <title>Quiz Completion</title>
     <link rel="stylesheet" href="/css/styles.css" />
   </head>
   <body>
-    <h1>Welcome to the Quiz App</h1>
-    <p>Last Streak: <%= lastStreak %></p>
-    <ul>
-      <li><a href="/quiz">Start Quiz</a></li>
-      <li><a href="/leaderboard">View Leaderboard</a></li>
-    </ul>
+    <h1>Quiz Completed!</h1>
+    <p>Your current streak is: <%= streak %></p>
+    <a href="/quiz">Try Again</a>
   </body>
 </html>

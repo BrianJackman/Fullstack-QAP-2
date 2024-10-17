@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz End</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
+  <body>
+    <h1>Quiz End</h1>
+    <p>Your streak: <%= streak %></p>
+    <form action="/quiz/end" method="POST">
+      <input type="hidden" name="streak" value="<%= streak %>" />
+      <label for="name">Enter your name:</label>
+      <input type="text" id="name" name="name" required />
+      <button type="submit">Save Score</button>
+    </form>
+    <a href="/">Back to Home</a>
+  </body>
+</html>
